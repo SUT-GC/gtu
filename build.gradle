@@ -31,6 +31,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-data-elasticsearch')
     compile('com.zaxxer:HikariCP:2.4.7')
+    compile('com.alibaba:fastjson:1.2.31')
     compile('org.apache.logging.log4j:log4j-api:2.8.1')
     runtime('mysql:mysql-connector-java')
     testCompile('org.springframework.boot:spring-boot-starter-test')

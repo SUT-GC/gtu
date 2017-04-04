@@ -8,6 +8,8 @@ import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.type.JdbcType;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Mapper
 @Component
 public interface GtuGaoXiaoFenShuMapper {
@@ -26,4 +28,7 @@ public interface GtuGaoXiaoFenShuMapper {
     @SelectProvider(type = GtuGaoXiaoFenShuProvider.class, method = "getGtuGaoXiaoFenShuById")
     GtuGaoxiaoFenshuPO getGtuGaoXiaoFenShuById(@Param("arg0") Integer id);
 
+    @SelectProvider(type = GtuGaoXiaoFenShuProvider.class, method = "getGtuGaoXiaoFenShuByLastIdAndLimit")
+    @ResultMap("gtuGaoXiaoFenShuResult")
+    List<GtuGaoxiaoFenshuPO> getGtuGaoXiaoFenShuByLastIdAndLimit(@Param("arg0") Integer lastId, @Param("arg1") Integer limit);
 }
