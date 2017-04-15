@@ -1,11 +1,10 @@
 package com.igouc;
 
-import com.igouc.common.config.DataSourceConfig;
+import com.igouc.config.DataSourceConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
-import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
 @ComponentScan("com.igouc")
 @SpringBootApplication

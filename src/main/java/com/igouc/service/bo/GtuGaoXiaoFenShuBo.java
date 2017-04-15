@@ -1,5 +1,7 @@
 package com.igouc.service.bo;
 
+import com.alibaba.fastjson.JSONObject;
+
 public class GtuGaoXiaoFenShuBo {
     private Integer id;
     private String daXueMing;
@@ -96,5 +98,9 @@ public class GtuGaoXiaoFenShuBo {
                 ", kongFenXian='" + kongFenXian + '\'' +
                 ", xianCha='" + xianCha + '\'' +
                 '}';
+    }
+
+    public String toJsonString() {
+        return JSONObject.toJSONString(this);
     }
 }

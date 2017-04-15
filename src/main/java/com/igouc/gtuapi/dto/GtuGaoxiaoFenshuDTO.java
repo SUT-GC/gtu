@@ -1,9 +1,8 @@
-package com.igouc.repository.po;
+package com.igouc.gtuapi.dto;
 
 import com.alibaba.fastjson.JSONObject;
-import com.igouc.service.bo.GtuGaoXiaoFenShuBo;
 
-public class GtuGaoxiaoFenshuPO {
+public class GtuGaoxiaoFenshuDTO {
     private Integer id;
     private String daXueMing;
     private String zhaoShengQu;
@@ -88,7 +87,7 @@ public class GtuGaoxiaoFenshuPO {
 
     @Override
     public String toString() {
-        return "GtuGaoxiaoFenshuPO{" +
+        return "GtuGaoxiaoFenshuDTO{" +
                 "id=" + id +
                 ", daXueMing='" + daXueMing + '\'' +
                 ", zhaoShengQu='" + zhaoShengQu + '\'' +
@@ -104,5 +103,4 @@ public class GtuGaoxiaoFenshuPO {
     public String toJsonString() {
         return JSONObject.toJSONString(this);
     }
-
 }

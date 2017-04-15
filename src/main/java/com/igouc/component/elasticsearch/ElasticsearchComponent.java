@@ -22,27 +22,28 @@ import java.util.concurrent.ExecutionException;
 public class ElasticsearchComponent {
     private static final Logger LOG = Logger.getLogger(ElasticsearchComponent.class);
     private static final String CLUSTER_NAME = "elasticsearch";
-    private static final String[] HOSTS = {"120.25.94.221:9200",};
-    private static final String INDEX_GTU = "gtu";
-    private static final String TYPE_GXFS = "gxfs";
+    private static final String[] HOSTS = {"120.25.94.221:9300",};
+    public static final String INDEX_GTU = "gtu";
+    public static final String TYPE_GXFS = "gxfs";
     private TransportClient client;
 
     @PostConstruct
     public void init() {
         Settings settings = Settings.settingsBuilder().
                 put("client.transport.sniff", true).
+                put("client.node", false).
                 put("discovery.zen.fd.connect_on_network_disconnect", true).
                 put("cluster.name", CLUSTER_NAME).build();
 
-        TransportClient client = TransportClient.builder().settings(settings).build();
+        this.client = TransportClient.builder().settings(settings).build();
         try {
             for (String host : HOSTS) {
                 int index = host.indexOf(":");
                 if (index > 0) {
-                    client.addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress(host.split(":")[0], Integer.parseInt(host.split(":")[1]))));
+                    this.client.addTransportAddress(new InetSocketTransportAddress(new InetSocketAddress(host.split(":")[0], Integer.parseInt(host.split(":")[1]))));
                 }
             }
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             LOG.error(String.format("获取ES客户端失败[%s]", e));
         }
     }

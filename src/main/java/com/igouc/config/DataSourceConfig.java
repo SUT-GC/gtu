@@ -1,4 +1,4 @@
-package com.igouc.common.config;
+package com.igouc.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
