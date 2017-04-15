@@ -3,7 +3,7 @@ package com.igouc.repository.po;
 import com.alibaba.fastjson.JSONObject;
 
 public class UniversityPo {
-    String universityName;
+    private String universityName;
 
     public String getUniversityName() {
         return universityName;

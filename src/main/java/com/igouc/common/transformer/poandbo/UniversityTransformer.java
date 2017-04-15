@@ -5,11 +5,13 @@ import com.igouc.repository.po.UniversityPo;
 import com.igouc.repository.po.YearPo;
 import com.igouc.service.bo.UniversityBo;
 import com.igouc.service.bo.YearBo;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@Component
 public class UniversityTransformer {
     public UniversityBo toUniversityBo(UniversityPo po) {
         if (po == null) {
@@ -21,7 +23,7 @@ public class UniversityTransformer {
         return bo;
     }
 
-    public List<UniversityBo> toYearBos(List<UniversityPo> pos) {
+    public List<UniversityBo> toUniversityBos(List<UniversityPo> pos) {
         if (ListUtil.isEmptyList(pos)) {
             return Collections.emptyList();
         }

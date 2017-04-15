@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Component
-public class GtuGaoXiaoFenShuTransformer {
+public class GtuGaoXiaoFenShuBoTransformer {
     public GtuGaoxiaoFenshuPO Bo2Po(GtuGaoXiaoFenShuBo gtuGaoXiaoFenShuBo) {
         if (gtuGaoXiaoFenShuBo == null)
             return null;

@@ -1,6 +1,6 @@
 package com.igouc.service;
 
-import com.igouc.common.transformer.boanddto.GtuGaoXiaoFenShuTransformer;
+import com.igouc.common.transformer.boanddto.GtuGaoXiaoFenShuDTOTransformer;
 import com.igouc.gtuapi.dto.GtuGaoxiaoFenshuDTO;
 import com.igouc.repository.GtuGaoXiaoFenShuRepository;
 import com.igouc.service.bo.GtuGaoXiaoFenShuBo;
@@ -14,7 +14,7 @@ public class GaoXiaoFenShuService {
     @Autowired
     private GtuGaoXiaoFenShuRepository gtuGaoXiaoFenShuRepository;
     @Autowired
-    private GtuGaoXiaoFenShuTransformer transformer;
+    private GtuGaoXiaoFenShuDTOTransformer transformer;
 
     private static final Logger LOG = Logger.getLogger(GaoXiaoFenShuService.class);
 

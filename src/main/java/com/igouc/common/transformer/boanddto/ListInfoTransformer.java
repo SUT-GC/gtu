@@ -2,10 +2,12 @@ package com.igouc.common.transformer.boanddto;
 
 import com.igouc.gtuapi.dto.ListInfoDTO;
 import com.igouc.service.bo.*;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class ListInfoTransformer {
     public ListInfoDTO toListInfoDTO(List<CityBo> citys, List<YearBo> years, List<MajorBo> majors, List<KeBieBo> kebies, List<UniversityBo> universitys) {
         ListInfoDTO dto = new ListInfoDTO();

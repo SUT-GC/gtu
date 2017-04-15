@@ -30,6 +30,10 @@ public class GtuGaoXiaoFenShuProvider {
         return String.format(" select %s from %s where nianfen = '%s' ", ALL_FIELD, TABLE, arg0);
     }
 
+    public String getGtuGaoXiaoFenShuByZhaoShengQu(String arg0) {
+        return String.format(" select %s from %s where zhaoshengqu = '%s' ", ALL_FIELD, TABLE, arg0);
+    }
+
     public String getGtuGaoXiaoFenShuByPiCi(String arg0) {
         return String.format(" select %s from %s where pici = '%s' ", ALL_FIELD, TABLE, arg0);
     }

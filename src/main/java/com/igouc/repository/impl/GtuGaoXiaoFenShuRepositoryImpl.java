@@ -1,6 +1,6 @@
 package com.igouc.repository.impl;
 
-import com.igouc.common.transformer.poandbo.GtuGaoXiaoFenShuTransformer;
+import com.igouc.common.transformer.poandbo.GtuGaoXiaoFenShuBoTransformer;
 import com.igouc.repository.GtuGaoXiaoFenShuRepository;
 import com.igouc.repository.impl.mapper.GtuGaoXiaoFenShuMapper;
 import com.igouc.repository.po.GtuGaoxiaoFenshuPO;
@@ -16,7 +16,7 @@ public class GtuGaoXiaoFenShuRepositoryImpl implements GtuGaoXiaoFenShuRepositor
     @Autowired
     private GtuGaoXiaoFenShuMapper gtuGaoXiaoFenShuMapper;
     @Autowired
-    private GtuGaoXiaoFenShuTransformer transformer;
+    private GtuGaoXiaoFenShuBoTransformer transformer;
 
     @Override
     public GtuGaoXiaoFenShuBo getGtuGaoXiaoFenShuById(Integer id) {
