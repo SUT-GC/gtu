@@ -13,7 +13,7 @@ public class GtuZhuanYeFenShuProvider {
     public String getZhuanYe(String arg0) {
         SQL sql = new SQL();
         sql.SELECT(ALL_CLOUMNS).FROM(TABLE);
-        sql.WHERE(" zhuanyeming = '%" + arg0 + "%' ");
+        sql.WHERE(" zhuanyeming = '" + arg0 + "' ");
         sql.ORDER_BY(" nianfen asc ");
 
         return sql.toString();
@@ -23,7 +23,7 @@ public class GtuZhuanYeFenShuProvider {
         SQL sql = new SQL();
         sql.SELECT(ALL_CLOUMNS).FROM(TABLE);
         sql.WHERE(String.format(" zhuanyeming = '%s' ", arg0));
-        sql.WHERE(String.format(" zhaoshengqu = '%s' ", arg1));
+        sql.WHERE(String.format(" kaoshengqu = '%s' ", arg1));
         sql.WHERE(String.format(" nianfen = '%s' ", arg2));
 
         return sql.toString();
@@ -32,7 +32,7 @@ public class GtuZhuanYeFenShuProvider {
     public String selectMajorInUniversity(String arg0) {
         SQL sql = new SQL();
         sql.SELECT(ALL_CLOUMNS).FROM(TABLE);
-        sql.WHERE(" daxueming = '%" + arg0 + "%' ");
+        sql.WHERE(" daxueming = '" + arg0 + "' ");
         sql.ORDER_BY(" nianfen asc ");
 
         return sql.toString();

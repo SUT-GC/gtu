@@ -7,7 +7,7 @@ public class GtuGaoXiaoFenShuProvider {
 
     private Logger log = Logger.getLogger(GtuGaoXiaoFenShuProvider.class);
 
-    private static final String ALL_FIELD = " id, daxueming, zhaoshengqu, kebie, nianfen, pici, pingjunfen, xiancha ";
+    private static final String ALL_FIELD = " id, daxueming, zhaoshengqu, kebie, nianfen, pici, pingjunfen, kongfenxian, xiancha ";
     private static final String TABLE = "gtu_gaoxiao_fenshu";
 
     public String getGtuGaoXiaoFenShuById(Integer arg0) {

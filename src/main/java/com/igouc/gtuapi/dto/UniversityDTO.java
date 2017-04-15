@@ -7,6 +7,7 @@ public class UniversityDTO {
     private String kebie;
     private String pici;
     private String scoreLimit;
+    private String year;
 
     public String getUniversityName() {
         return universityName;
@@ -56,6 +57,14 @@ public class UniversityDTO {
         this.scoreLimit = scoreLimit;
     }
 
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
     @Override
     public String toString() {
         return "UniversityDTO{" +
@@ -65,6 +74,7 @@ public class UniversityDTO {
                 ", kebie='" + kebie + '\'' +
                 ", pici='" + pici + '\'' +
                 ", scoreLimit='" + scoreLimit + '\'' +
+                ", year='" + year + '\'' +
                 '}';
     }
 

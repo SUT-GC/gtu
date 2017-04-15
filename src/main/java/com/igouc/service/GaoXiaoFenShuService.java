@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class GaoXiaoFenShuService {
@@ -36,7 +37,7 @@ public class GaoXiaoFenShuService {
     public List<UniversityDTO> seleteGaoXiaoXin(String cityName, String kebie, String year) {
         List<GtuGaoXiaoFenShuBo> gtuGaoXiaoFenShuBos = gtuGaoXiaoFenShuRepository.getGaoXiaoInfo(cityName, kebie, year);
 
-        return toUniversityDto(gtuGaoXiaoFenShuBos);
+        return toUniversityDto(gtuGaoXiaoFenShuBos).stream().distinct().collect(Collectors.toList());
     }
 
     public List<UniversityDTO> selectByScore(String cityName, String score, String year) {
@@ -66,9 +67,10 @@ public class GaoXiaoFenShuService {
             universityDTO.setCityName(bo.getZhaoShengQu());
             universityDTO.setKebie(bo.getKeBie());
             universityDTO.setPici(bo.getPiCi());
+            universityDTO.setYear(bo.getNianFen());
             universityDTO.setScoreLimit(bo.getKongFenXian());
             GaoXiaoXinXiBo gaoXiaoXinXiBo = gaoXiaoXinXiRepository.getGaoXiaoXinXi(bo.getDaXueMing());
-            universityDTO.setUrl(gaoXiaoXinXiBo == null ? "" : gaoXiaoXinXiBo.getGaoXiaoUrl());
+            universityDTO.setUrl(gaoXiaoXinXiBo == null ? String.format("http://baike.baidu.com/item/%s", bo.getDaXueMing()) : gaoXiaoXinXiBo.getGaoXiaoUrl());
             universitys.add(universityDTO);
         }
 

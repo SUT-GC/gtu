@@ -77,4 +77,34 @@ public class ZhuanYeDTO {
                 ", majorUrl='" + majorUrl + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ZhuanYeDTO that = (ZhuanYeDTO) o;
+
+        if (majorName != null ? !majorName.equals(that.majorName) : that.majorName != null) return false;
+        if (universityName != null ? !universityName.equals(that.universityName) : that.universityName != null)
+            return false;
+        if (cityName != null ? !cityName.equals(that.cityName) : that.cityName != null) return false;
+        if (year != null ? !year.equals(that.year) : that.year != null) return false;
+        if (pici != null ? !pici.equals(that.pici) : that.pici != null) return false;
+        if (avgScore != null ? !avgScore.equals(that.avgScore) : that.avgScore != null) return false;
+        return majorUrl != null ? majorUrl.equals(that.majorUrl) : that.majorUrl == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = majorName != null ? majorName.hashCode() : 0;
+        result = 31 * result + (universityName != null ? universityName.hashCode() : 0);
+        result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
+        result = 31 * result + (year != null ? year.hashCode() : 0);
+        result = 31 * result + (pici != null ? pici.hashCode() : 0);
+        result = 31 * result + (avgScore != null ? avgScore.hashCode() : 0);
+        result = 31 * result + (majorUrl != null ? majorUrl.hashCode() : 0);
+        return result;
+    }
 }
