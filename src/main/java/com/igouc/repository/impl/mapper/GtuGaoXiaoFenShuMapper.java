@@ -22,7 +22,7 @@ public interface GtuGaoXiaoFenShuMapper {
             @Result(property = "piCi", column = "pici", javaType = String.class, jdbcType = JdbcType.VARCHAR, typeHandler = StringTypeHandler.class),
             @Result(property = "pingJunFen", column = "pingjunfen", javaType = String.class, jdbcType = JdbcType.VARCHAR, typeHandler = StringTypeHandler.class),
             @Result(property = "kongFenXian", column = "kongfenxian", javaType = String.class, jdbcType = JdbcType.VARCHAR, typeHandler = StringTypeHandler.class),
-            @Result(property = "xianCha", column = "xianCha", javaType = String.class, jdbcType = JdbcType.VARCHAR, typeHandler = StringTypeHandler.class),
+            @Result(property = "xianCha", column = "xiancha", javaType = String.class, jdbcType = JdbcType.VARCHAR, typeHandler = StringTypeHandler.class),
     })
     @SelectProvider(type = GtuGaoXiaoFenShuProvider.class, method = "getGtuGaoXiaoFenShuById")
     GtuGaoxiaoFenshuPO getGtuGaoXiaoFenShuById(@Param("arg0") Integer id);

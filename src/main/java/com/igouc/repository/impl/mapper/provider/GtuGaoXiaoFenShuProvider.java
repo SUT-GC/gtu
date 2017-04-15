@@ -1,8 +1,12 @@
 package com.igouc.repository.impl.mapper.provider;
 
 import org.apache.ibatis.jdbc.SQL;
+import org.apache.log4j.Logger;
 
 public class GtuGaoXiaoFenShuProvider {
+
+    private Logger log = Logger.getLogger(GtuGaoXiaoFenShuProvider.class);
+
     private static final String ALL_FIELD = " id, daxueming, zhaoshengqu, kebie, nianfen, pici, pingjunfen, xiancha ";
     private static final String TABLE = "gtu_gaoxiao_fenshu";
 
@@ -53,7 +57,9 @@ public class GtuGaoXiaoFenShuProvider {
     public String getGaoXiaoInfo(String arg0, String arg1, String arg2) {
         SQL sql = new SQL();
         sql.SELECT(ALL_FIELD).FROM(TABLE);
-        sql.WHERE(" zhaoshengqu = '%" + arg0 + "%' ").WHERE(" kebie = '%" + arg1 + "%' ").WHERE(" nianfen = '%" + arg2 + "%' ");
+        sql.WHERE(" zhaoshengqu = '" + arg0 + "' ").WHERE(" kebie = '" + arg1 + "' ").WHERE(" nianfen = '" + arg2 + "' ");
+
+        log.info(sql.toString());
         return sql.toString();
     }
 
@@ -64,6 +70,7 @@ public class GtuGaoXiaoFenShuProvider {
         sql.WHERE(String.format(" kongfenxian != '--' and kongfenxian > '%s' ", arg1));
         sql.WHERE(String.format(" nianfen = '%s' ", arg2));
 
+        log.info(sql.toString());
         return sql.toString();
     }
 
@@ -74,6 +81,7 @@ public class GtuGaoXiaoFenShuProvider {
         sql.WHERE(String.format(" kebie = '%s' ", arg1));
         sql.WHERE(String.format(" nianfen = '%s' ", arg2));
 
+        log.info(sql.toString());
         return sql.toString();
     }
 }
