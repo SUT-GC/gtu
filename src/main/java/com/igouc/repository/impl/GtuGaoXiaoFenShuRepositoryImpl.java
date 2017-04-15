@@ -94,4 +94,25 @@ public class GtuGaoXiaoFenShuRepositoryImpl implements GtuGaoXiaoFenShuRepositor
 
         return transformer.Po2Bos(gtuGaoxiaoFenshuPOs);
     }
+
+    @Override
+    public List<GtuGaoXiaoFenShuBo> getGaoXiaoInfo(String cityName, String kebie, String year) {
+        List<GtuGaoxiaoFenshuPO> gtuGaoxiaoFenshuPOs = gtuGaoXiaoFenShuMapper.getGaoXiaoInfo(cityName, kebie, year);
+
+        return transformer.Po2Bos(gtuGaoxiaoFenshuPOs);
+    }
+
+    @Override
+    public List<GtuGaoXiaoFenShuBo> selectByScore(String zhaoShengQu, String kongFenXian, String nianFen) {
+        List<GtuGaoxiaoFenshuPO> gtuGaoxiaoFenshuPOs = gtuGaoXiaoFenShuMapper.selectByScore(zhaoShengQu, kongFenXian, nianFen);
+
+        return transformer.Po2Bos(gtuGaoxiaoFenshuPOs);
+    }
+
+    @Override
+    public List<GtuGaoXiaoFenShuBo> selectCityScore(String zhaoShengQu, String keBie, String nianFen) {
+        List<GtuGaoxiaoFenshuPO> gtuGaoxiaoFenshuPOs = gtuGaoXiaoFenShuMapper.selectCityScore(zhaoShengQu, keBie, nianFen);
+
+        return transformer.Po2Bos(gtuGaoxiaoFenshuPOs);
+    }
 }

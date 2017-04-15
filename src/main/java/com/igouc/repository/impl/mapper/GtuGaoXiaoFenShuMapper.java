@@ -67,4 +67,15 @@ public interface GtuGaoXiaoFenShuMapper {
     @ResultMap("gtuGaoXiaoFenShuResult")
     List<GtuGaoxiaoFenshuPO> getGtuGaoXiaoFenShuByXianCha(@Param("arg0") String xianCha);
 
+    @SelectProvider(type = GtuGaoXiaoFenShuProvider.class, method = "getGaoXiaoInfo")
+    @ResultMap("gtuGaoXiaoFenShuResult")
+    List<GtuGaoxiaoFenshuPO> getGaoXiaoInfo(@Param("arg0") String cityName, @Param("arg1") String kebie, @Param("arg2") String nianfen);
+
+    @SelectProvider(type = GtuGaoXiaoFenShuProvider.class, method = "selectByScore")
+    @ResultMap("gtuGaoXiaoFenShuResult")
+    List<GtuGaoxiaoFenshuPO> selectByScore(@Param("arg0") String zhaoShengQu, @Param("arg1") String kongFenXian, @Param("arg2") String nianFen);
+
+    @SelectProvider(type = GtuGaoXiaoFenShuProvider.class, method = "selectCityScore")
+    @ResultMap("gtuGaoXiaoFenShuResult")
+    List<GtuGaoxiaoFenshuPO> selectCityScore(String zhaoShengQu, String keBie, String nianFen);
 }

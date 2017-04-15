@@ -50,4 +50,30 @@ public class GtuGaoXiaoFenShuProvider {
         return String.format(" select %s from %s where xiancha = '%s' ", ALL_FIELD, TABLE, arg0);
     }
 
+    public String getGaoXiaoInfo(String arg0, String arg1, String arg2) {
+        SQL sql = new SQL();
+        sql.SELECT(ALL_FIELD).FROM(TABLE);
+        sql.WHERE(" zhaoshengqu = '%" + arg0 + "%' ").WHERE(" kebie = '%" + arg1 + "%' ").WHERE(" nianfen = '%" + arg2 + "%' ");
+        return sql.toString();
+    }
+
+    public String selectByScore(String arg0, String arg1, String arg2) {
+        SQL sql = new SQL();
+        sql.SELECT(ALL_FIELD).FROM(TABLE);
+        sql.WHERE(String.format(" zhaoshengqu = '%s' ", arg0));
+        sql.WHERE(String.format(" kongfenxian != '--' and kongfenxian > '%s' ", arg1));
+        sql.WHERE(String.format(" nianfen = '%s' ", arg2));
+
+        return sql.toString();
+    }
+
+    public String selectCityScore(String arg0, String arg1, String arg2) {
+        SQL sql = new SQL();
+        sql.SELECT(ALL_FIELD).FROM(TABLE);
+        sql.WHERE(String.format(" zhaoshengqu = '%s' ", arg0));
+        sql.WHERE(String.format(" kebie = '%s' ", arg1));
+        sql.WHERE(String.format(" nianfen = '%s' ", arg2));
+
+        return sql.toString();
+    }
 }

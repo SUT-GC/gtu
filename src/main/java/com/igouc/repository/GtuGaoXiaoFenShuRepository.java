@@ -17,18 +17,19 @@ public interface GtuGaoXiaoFenShuRepository {
 
     List<GtuGaoXiaoFenShuBo> getGtuGaoXiaoFenShuByKeBie(String keBie);
 
-
     List<GtuGaoXiaoFenShuBo> getGtuGaoXiaoFenShuByNianFen(String nianFen);
 
     List<GtuGaoXiaoFenShuBo> getGtuGaoXiaoFenShuByPiCi(String piCi);
 
-
     List<GtuGaoXiaoFenShuBo> getGtuGaoXiaoFenShuByPingJunFen(String pingJunFen);
-
 
     List<GtuGaoXiaoFenShuBo> getGtuGaoXiaoFenShuByKongFenXian(String kongFenXian);
 
     List<GtuGaoXiaoFenShuBo> getGtuGaoXiaoFenShuByXianCha(String xianCha);
 
+    List<GtuGaoXiaoFenShuBo> getGaoXiaoInfo(String cityName, String kebie, String year);
 
+    List<GtuGaoXiaoFenShuBo> selectByScore(String zhaoShengQu, String kongFenXian, String nianFen);
+
+    List<GtuGaoXiaoFenShuBo> selectCityScore(String cityName, String keBie, String year);
 }
