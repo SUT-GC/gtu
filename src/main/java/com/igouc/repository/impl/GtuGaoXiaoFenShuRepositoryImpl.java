@@ -115,4 +115,11 @@ public class GtuGaoXiaoFenShuRepositoryImpl implements GtuGaoXiaoFenShuRepositor
 
         return transformer.Po2Bos(gtuGaoxiaoFenshuPOs);
     }
+
+    @Override
+    public List<GtuGaoXiaoFenShuBo> selectUniversityScore(String zhaoShenQu, String keBie, String daXueMing) {
+        List<GtuGaoxiaoFenshuPO> gtuGaoxiaoFenshuPOs = gtuGaoXiaoFenShuMapper.selectUniversityScore(zhaoShenQu, keBie, daXueMing);
+
+        return transformer.Po2Bos(gtuGaoxiaoFenshuPOs);
+    }
 }

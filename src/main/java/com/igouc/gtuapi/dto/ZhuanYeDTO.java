@@ -8,6 +8,7 @@ public class ZhuanYeDTO {
     private String pici;
     private String avgScore;
     private String majorUrl;
+    private String kebie;
 
     public String getMajorName() {
         return majorName;
@@ -65,6 +66,14 @@ public class ZhuanYeDTO {
         this.majorUrl = majorUrl;
     }
 
+    public String getKebie() {
+        return kebie;
+    }
+
+    public void setKebie(String kebie) {
+        this.kebie = kebie;
+    }
+
     @Override
     public String toString() {
         return "ZhuanYeDTO{" +
@@ -75,6 +84,7 @@ public class ZhuanYeDTO {
                 ", pici='" + pici + '\'' +
                 ", avgScore='" + avgScore + '\'' +
                 ", majorUrl='" + majorUrl + '\'' +
+                ", kebie='" + kebie + '\'' +
                 '}';
     }
 

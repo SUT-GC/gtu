@@ -1,8 +1,10 @@
 package com.igouc.repository.impl.mapper.provider;
 
 import org.apache.ibatis.jdbc.SQL;
+import org.apache.log4j.Logger;
 
 public class GtuZhuanYeFenShuProvider {
+    private Logger log = Logger.getLogger(GtuZhuanYeFenShuProvider.class);
     private static final String ALL_CLOUMNS = " id, zhuanyeming, daxueming, pingjunfen, zuigaofen, kaoshengqu, kebie, nianfen, pici ";
     private static final String TABLE = " gtu_zuanye_fenshu ";
 
@@ -16,6 +18,7 @@ public class GtuZhuanYeFenShuProvider {
         sql.WHERE(" zhuanyeming = '" + arg0 + "' ");
         sql.ORDER_BY(" nianfen asc ");
 
+        log.info(sql.toString());
         return sql.toString();
     }
 
@@ -25,7 +28,9 @@ public class GtuZhuanYeFenShuProvider {
         sql.WHERE(String.format(" zhuanyeming = '%s' ", arg0));
         sql.WHERE(String.format(" kaoshengqu = '%s' ", arg1));
         sql.WHERE(String.format(" nianfen = '%s' ", arg2));
+        sql.ORDER_BY(" pingjunfen asc ");
 
+        log.info(sql.toString());
         return sql.toString();
     }
 
@@ -35,6 +40,7 @@ public class GtuZhuanYeFenShuProvider {
         sql.WHERE(" daxueming = '" + arg0 + "' ");
         sql.ORDER_BY(" nianfen asc ");
 
+        log.info(sql.toString());
         return sql.toString();
     }
 }

@@ -32,4 +32,6 @@ public interface GtuGaoXiaoFenShuRepository {
     List<GtuGaoXiaoFenShuBo> selectByScore(String zhaoShengQu, String kongFenXian, String nianFen);
 
     List<GtuGaoXiaoFenShuBo> selectCityScore(String cityName, String keBie, String year);
+
+    List<GtuGaoXiaoFenShuBo> selectUniversityScore(String cityName, String kebie, String universityName);
 }

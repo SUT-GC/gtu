@@ -49,6 +49,7 @@ public class ZhuanYeFenShuService {
             dto.setAvgScore(bo.getPingJunFen());
             dto.setPici(bo.getPiCi());
             dto.setYear(bo.getNianFen());
+            dto.setKebie(bo.getKeBie());
             ZhuanYeXinXiBo zhuanYeXinXiBo = zhuanYeXinXiRepository.getZhuanYeXinXi(bo.getZhuanYeMing());
             dto.setMajorUrl(zhuanYeXinXiBo.getZhuanYeUrl());
             dtos.add(dto);

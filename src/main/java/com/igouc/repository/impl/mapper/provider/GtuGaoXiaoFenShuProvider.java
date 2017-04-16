@@ -69,6 +69,8 @@ public class GtuGaoXiaoFenShuProvider {
         sql.WHERE(String.format(" zhaoshengqu = '%s' ", arg0));
         sql.WHERE(String.format(" kongfenxian != '--' and kongfenxian > '%s' ", arg1));
         sql.WHERE(String.format(" nianfen = '%s' ", arg2));
+        sql.ORDER_BY(" kongfenxian desc");
+        sql.ORDER_BY(" pici asc ");
 
         log.info(sql.toString());
         return sql.toString();
@@ -80,6 +82,19 @@ public class GtuGaoXiaoFenShuProvider {
         sql.WHERE(String.format(" zhaoshengqu = '%s' ", arg0));
         sql.WHERE(String.format(" kebie = '%s' ", arg1));
         sql.WHERE(String.format(" nianfen = '%s' ", arg2));
+        sql.ORDER_BY(" kongfenxian desc ");
+
+        log.info(sql.toString());
+        return sql.toString();
+    }
+
+    public String selectUniversityScore(String arg0, String arg1, String arg2) {
+        SQL sql = new SQL();
+        sql.SELECT(ALL_FIELD).FROM(TABLE);
+        sql.WHERE(String.format(" zhaoshengqu = '%s' ", arg0));
+        sql.WHERE(String.format(" kebie = '%s' ", arg1));
+        sql.WHERE(String.format(" daxueming = '%s' ", arg2));
+        sql.ORDER_BY(" nianfen desc ");
 
         log.info(sql.toString());
         return sql.toString();

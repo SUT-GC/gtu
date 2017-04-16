@@ -53,4 +53,11 @@ public class GaoXiaoFenShuApi {
 
         return gaoXiaoFenShuService.selectByUniversityName(universityName);
     }
+
+    @RequestMapping(value = "/university/score", method = RequestMethod.GET, produces = "application/json; charset=utf-8")
+    public List<UniversityDTO> selectUniversityScore(String cityName, String kebie, String universityName) {
+
+        return gaoXiaoFenShuService.selectUniversityScore(cityName, kebie, universityName);
+    }
+
 }

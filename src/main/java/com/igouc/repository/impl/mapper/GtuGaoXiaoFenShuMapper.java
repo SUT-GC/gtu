@@ -77,5 +77,9 @@ public interface GtuGaoXiaoFenShuMapper {
 
     @SelectProvider(type = GtuGaoXiaoFenShuProvider.class, method = "selectCityScore")
     @ResultMap("gtuGaoXiaoFenShuResult")
-    List<GtuGaoxiaoFenshuPO> selectCityScore(String zhaoShengQu, String keBie, String nianFen);
+    List<GtuGaoxiaoFenshuPO> selectCityScore(@Param("arg0")String zhaoShengQu, @Param("arg1")String keBie, @Param("arg2")String nianFen);
+
+    @SelectProvider(type = GtuGaoXiaoFenShuProvider.class, method = "selectUniversityScore")
+    @ResultMap("gtuGaoXiaoFenShuResult")
+    List<GtuGaoxiaoFenshuPO> selectUniversityScore(@Param("arg0")String zhaoShenQu, @Param("arg1")String keBie, @Param("arg2")String daXueMing);
 }

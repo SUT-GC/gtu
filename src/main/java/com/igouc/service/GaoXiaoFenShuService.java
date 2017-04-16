@@ -58,6 +58,12 @@ public class GaoXiaoFenShuService {
         return toUniversityDto(gtuGaoXiaoFenShuBos);
     }
 
+    public List<UniversityDTO> selectUniversityScore(String cityName, String kebie, String universityName) {
+        List<GtuGaoXiaoFenShuBo> gtuGaoXiaoFenShuBos = gtuGaoXiaoFenShuRepository.selectUniversityScore(cityName, kebie, universityName);
+
+        return toUniversityDto(gtuGaoXiaoFenShuBos);
+    }
+
     private List<UniversityDTO> toUniversityDto(List<GtuGaoXiaoFenShuBo> gtuGaoXiaoFenShuBos) {
         List<UniversityDTO> universitys = new ArrayList<>();
 
@@ -76,5 +82,6 @@ public class GaoXiaoFenShuService {
 
         return universitys;
     }
+
 
 }
